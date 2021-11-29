@@ -3,14 +3,10 @@ package String1;
 public class SeeColor {
 
     public String seeColor(String str) {
-        int length = str.length();
 
-        if(length < 3)
-            return "";
-
-        else if(str.substring(0,3).equals("red"))
+        if(str.startsWith("red"))
             return "red";
-        else if(length > 3 && str.substring(0,4).equals("blue"))
+        else if(str.startsWith("blue"))
             return "blue";
         return "";
     }

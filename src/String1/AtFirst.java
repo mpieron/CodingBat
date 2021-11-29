@@ -6,8 +6,6 @@ public class AtFirst {
 
         if(str.length() == 0)
             return "@@";
-        else if(str.length() == 1)
-            return str + "@";
-        return str.substring(0,2);
+        return str.length() == 1 ? str + "@" : str.substring(0,2);
     }
 }

@@ -6,12 +6,8 @@ public class LastChars {
         int lengthA = a.length();
         int lengthB = b.length();
 
-        if(lengthA == 0 && lengthB != 0)
-            return "@" + b.substring(lengthB-1);
-        else if(lengthA != 0 && lengthB == 0)
-            return a.charAt(0) + "@";
-        else if(lengthA == 0)
-            return "@@";
-        return a.charAt(0) + b.substring(lengthB-1);
+        String firstA = lengthA == 0 ? "@" : String.valueOf(a.charAt(0));
+        String lastB = lengthB == 0 ? "@" : b.substring(lengthB - 1);
+        return firstA + lastB;
     }
 }

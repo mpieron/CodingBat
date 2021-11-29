@@ -4,17 +4,16 @@ public class WithoutX {
 
     public String withoutX(String str) {
         int length = str.length();
-        String result = "";
 
         if(length == 0)
             return "";
-        if(str.charAt(0) != 'x')
-            result += str.charAt(0);
-        if(length > 1){
-            result += str.substring(1,length-1);
-            if(str.charAt(length-1) != 'x')
-                result += str.charAt(length-1);
-        }
-        return result;
+
+        int start = str.startsWith("x") ? 1 : 0;
+        int end = 1;
+
+        if(length > 1)
+            end = str.endsWith("x") ? length-1 : length;
+
+        return  str.substring(start, end);
     }
 }
