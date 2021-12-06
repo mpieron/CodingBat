@@ -3,10 +3,11 @@ package Array1;
 public class RotateLeft3 {
 
     public int[] rotateLeft3(int[] nums) {
-        int tmp = nums[0];
-        for(int i=0; i<nums.length-1; i++)
-            nums[i] = nums[i+1];
-        nums[nums.length-1] = tmp;
-        return nums;
+        int length = nums.length;
+        int[] num = new int[length];
+
+        System.arraycopy(nums, 1, num, 0, length-1);
+        num[length-1] = nums[0];
+        return num;
     }
 }
